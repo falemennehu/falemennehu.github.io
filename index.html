@@ -3,7 +3,7 @@
     <head>
         <script>
 var xhttp = new XMLHttpRequest();
-xhttp.open("GET", "xml.xml", true);
+xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&appid=44db6a862fba0b067b1930da0d769e98", true);
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         myFunction(xhttp);
@@ -14,7 +14,7 @@ xhttp.send(null);
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     document.getElementById("demo").innerHTML =
-    xmlDoc.getElementsByTagName("Durum")[0].childNodes[0].nodeValue;
+    xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
 }
 </script>
     </head>
