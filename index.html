@@ -15,12 +15,15 @@ function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     document.getElementById("demo").innerHTML =
     xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    document.getElementById("dem").innerHTML =
+    xmlDoc.getElementsByTagName("temperature")[0].childNodes[0].nodeValue;
 }
 </script>
     </head>
 <body>
 
 <p id="demo"></p>
+<p id="dem"></p>
 
 
 
