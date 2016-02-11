@@ -33,7 +33,7 @@
         Weather.getCurrent( "Istanbul", function( current ) {
             $( "#current" ).html( "Sıcaklık: " +
                 Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
-                "<br />Current Conditions: " + current.conditions() );
+                "<br />Anlık durum: " + current.conditions() );
         });
         Weather.getForecast( "Istanbul", function ( forecast ) {
             $( "#forecast" ).html( "En yüksek sıcaklık: " + 
