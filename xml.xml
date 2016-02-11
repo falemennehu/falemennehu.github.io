@@ -1,0 +1,22 @@
+<soa>
+<sehirler>
+<Bolge>Marmara</Bolge>
+<Peryot>Ogle</Peryot>
+<ili>ISTANBUL</ili>
+<Merkez>ISTANBUL</Merkez>
+<Durum>Çok bulutlu, aralıklı yağmur ve sağanak yağışlı</Durum>
+<Mak>12</Mak>
+<Min/>
+<SehirIkon/>
+</sehirler>
+<sehirler>
+<Bolge>Ege</Bolge>
+<Peryot>Ogle</Peryot>
+<ili>IZMIR</ili>
+<Merkez>IZMIR</Merkez>
+<Durum>Çok bulutlu ve aralıklı sağanak yağışlı</Durum>
+<Mak>17</Mak>
+<Min/>
+<SehirIkon/>
+</sehirler>
+</soa>
