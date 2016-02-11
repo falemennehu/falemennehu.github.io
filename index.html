@@ -3,14 +3,14 @@
     <head>
         <script>
 var xhttp = new XMLHttpRequest();
+xhttp.open("GET", "http://www.mgm.gov.tr/ftpdata/analiz/sonsoa.xml", true);
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         myFunction(xhttp);
     }
 };
-xhttp.open("GET", "xml.xml", true);
-xhttp.send();
 
+xhttp.send(null);
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     document.getElementById("demo").innerHTML =
