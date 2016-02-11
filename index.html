@@ -14,7 +14,7 @@
   <body>
     <div class="container">
         <div class="row">
-            <h1 class="text-center">Guntersville, AL</h1>
+            <h1 class="text-center">Istanbul, TR</h1>
             <div class="col-sm-6">
                 <h2>Current Conditions</h2>
                 <h3 id="current"></h3>
@@ -30,13 +30,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="hava.js"></script>
     <script>
-        Weather.getCurrent( "Guntersville", function( current ) {
+        Weather.getCurrent( "Istanbul", function( current ) {
             $( "#current" ).html( "Temperature: " + current.temperature() + "&deg;K or " +
                 Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
                 Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
                 "<br />Current Conditions: " + current.conditions() );
         });
-        Weather.getForecast( "Guntersville", function ( forecast ) {
+        Weather.getForecast( "Istanbul", function ( forecast ) {
             $( "#forecast" ).html( "High: " + forecast.high() + "&deg;K or " +
                 Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
                 Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
