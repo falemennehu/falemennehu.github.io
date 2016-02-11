@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script>
-var xhttp = new XMLHttpRequest();
-xhttp.open("GET", "http://www.owebtools.com/xmlhavadurumu.php?sehir=Istanbul", true);
-xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        myFunction(xhttp);
-    }
-};
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>weather.js</title>
 
-xhttp.send(null);
-function myFunction(xml) {
-    var xmlDoc = xml.responseXML;
-    document.getElementById("demo").innerHTML =
-    xmlDoc.getElementsByTagName("YayinNo")[0].childNodes[0].nodeValue;
-    document.getElementById("dem").innerHTML =
-   xmlDoc.getElementsByTagName("durum")[0].childNodes[0].nodeValue;
-}
-</script>
-    </head>
-<body>
+    <!-- Bootstrap - for styling purposes only -->
+    <link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<p id="demo"></p>
-<p id="dem"></p>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">Guntersville, AL</h1>
+            <div class="col-sm-6">
+                <h2>Current Conditions</h2>
+                <h3 id="current"></h3>
+            </div>
+            <div class="col-sm-6">
+                <h2>Forecast</h1>
+                <h3 id="forecast"></h2>
+            </div>
+        </div>
+    </div>
 
-
-
-</body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="hava.js"></script>
+    <script>
+        Weather.getCurrent( "Guntersville", function( current ) {
+            $( "#current" ).html( "Temperature: " + current.temperature() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
+                "<br />Current Conditions: " + current.conditions() );
+        });
+        Weather.getForecast( "Guntersville", function ( forecast ) {
+            $( "#forecast" ).html( "High: " + forecast.high() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
+                forecast.low() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
+        });
+    </script>
+  </body>
 </html>
+
